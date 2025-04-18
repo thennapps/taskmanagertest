@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <img src="logo.png" alt="Company Logo" style="height: 40px;" />
+    <h1>ConsultPro Task Manager</h1>
+  </div>
+  <button id="addTaskBtn">+ New Task</button>
+</header>
+
+
+<section id="taskForm" style="display:none;">
+  <input type="text" id="taskName" placeholder="Task name" />
+  <input type="date" id="dueDate" />
+  <select id="assignedTo">
+    <option value="">Assign to...</option>
+    <option value="Alice">Alice</option>
+    <option value="Bob">Bob</option>
+    <option value="Charlie">Charlie</option>
+  </select>
+  <button onclick="addTask()">Add Task</button>
+</section>
+
+<section style="margin-top: 20px;">
+  <label for="statusFilter"><strong>Filter by status:</strong></label>
+  <select id="statusFilter" onchange="displayTasks()">
+    <option value="">All</option>
+    <option value="To Do">To Do</option>
+    <option value="In Progress">In Progress</option>
+    <option value="Done">Done</option>
+  </select>
+<button onclick="exportCSV()" style="margin-top: 10px;">Export to CSV</button>
+
+</section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
